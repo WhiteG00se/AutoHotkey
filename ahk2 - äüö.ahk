@@ -1,12 +1,7 @@
-; AutoHotkey v2 script
-; CapsLock as a pure modifier for umlauts
-; CapsLock alone does nothing
-
-; Prevent CapsLock from toggling
+; Prevent solo CapsLock (clicked amongst other keys not part of this script will sadly still trigger it)
 CapsLock::return
 
-; CapsLock + Shift + Key
-SendUmlaut(key) {
+considerShift(key) {
     shift := GetKeyState("Shift", "P")
     if key = "a"
         Send(shift ? "Ä" : "ä")
@@ -17,6 +12,9 @@ SendUmlaut(key) {
 }
 
 ; CapsLock + Key
-CapsLock & a::SendUmlaut("a")
-CapsLock & o::SendUmlaut("o")
-CapsLock & u::SendUmlaut("u")
+CapsLock & a::considerShift("a")
+CapsLock & o::considerShift("o")
+CapsLock & u::considerShift("u")
+CapsLock & s::Send("ß")
+CapsLock & e::Send("€")
+CapsLock & `::Send("°")
