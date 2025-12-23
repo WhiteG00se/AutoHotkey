@@ -1,5 +1,10 @@
-; Prevent solo CapsLock (clicked amongst other keys not part of this script will sadly still trigger it)
-CapsLock::return
+; Disable solo CapsLock (clicked amongst other keys not part of this script will sadly still trigger it)
+; If CapsLock is on, turn it off
+CapsLock::
+{
+    if GetKeyState("CapsLock", "T")
+        SetCapsLockState "Off"
+}
 
 considerShift(key) {
     shift := GetKeyState("Shift", "P")
