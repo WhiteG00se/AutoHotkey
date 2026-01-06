@@ -1,3 +1,5 @@
+; use the v1 version, this is not up to date
+
 ; Disable solo CapsLock (clicked amongst other keys not part of this script will sadly still trigger it)
 ; If CapsLock is on, turn it off
 CapsLock::
