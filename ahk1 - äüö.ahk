@@ -6,39 +6,48 @@ return
 
 considerShift(key) {
     shift := GetKeyState("Shift", "P")
-    if (key = "a")
-        Send % shift ? "Ä" : "ä"
-    else if (key = "o")
-        Send % shift ? "Ö" : "ö"
-    else if (key = "u")
-        Send % shift ? "Ü" : "ü"
+
+    switch key {
+        case "a":
+            Send % shift ? "Ä" : "ä"
+        case "o":
+            Send % shift ? "Ö" : "ö"
+        case "u":
+            Send % shift ? "Ü" : "ü"
+        case "s":
+            Send ß
+        case "e":
+            Send €
+        default:
+            Send % shift ? Format("{:U}", key) : key
+    }
 }
 
 ; CapsLock + Key
 CapsLock & a::considerShift("a")
-CapsLock & b::Send b
-CapsLock & c::Send c
-CapsLock & d::Send d
-CapsLock & e::Send €
-CapsLock & f::Send f
-CapsLock & g::Send g
-CapsLock & h::Send h
-CapsLock & i::Send i
-CapsLock & j::Send j
-CapsLock & k::Send k
-CapsLock & l::Send l
-CapsLock & m::Send m
-CapsLock & n::Send n
+CapsLock & b::considerShift("b")
+CapsLock & c::considerShift("c")
+CapsLock & d::considerShift("d")
+CapsLock & e::considerShift("e")
+CapsLock & f::considerShift("f")
+CapsLock & g::considerShift("g")
+CapsLock & h::considerShift("h")
+CapsLock & i::considerShift("i")
+CapsLock & j::considerShift("j")
+CapsLock & k::considerShift("k")
+CapsLock & l::considerShift("l")
+CapsLock & m::considerShift("m")
+CapsLock & n::considerShift("n")
 CapsLock & o::considerShift("o")
-CapsLock & p::Send p
-CapsLock & q::Send q
-CapsLock & r::Send r
-CapsLock & s::Send ß
-CapsLock & t::Send t
+CapsLock & p::considerShift("p")
+CapsLock & q::considerShift("q")
+CapsLock & r::considerShift("r")
+CapsLock & s::considerShift("s")
+CapsLock & t::considerShift("t")
 CapsLock & u::considerShift("u")
-CapsLock & v::Send v
-CapsLock & w::Send w
-CapsLock & x::Send x
-CapsLock & y::Send y
-CapsLock & z::Send z
+CapsLock & v::considerShift("v")
+CapsLock & w::considerShift("w")
+CapsLock & x::considerShift("x")
+CapsLock & y::considerShift("y")
+CapsLock & z::considerShift("z")
 CapsLock & `::Send °
