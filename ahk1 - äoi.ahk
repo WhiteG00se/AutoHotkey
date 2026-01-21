@@ -1,7 +1,6 @@
 ﻿; Disable solo CapsLock
 CapsLock::
-    if GetKeyState("CapsLock", "T")
-        SetCapsLockState, Off
+    SetCapsLockState, Off
 return
 
 considerShift(key) {
