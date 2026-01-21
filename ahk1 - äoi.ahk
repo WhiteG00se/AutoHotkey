@@ -1,5 +1,6 @@
-﻿; Disable solo CapsLock
+﻿; Disable solo CapsLock and always force CapsLock off
 CapsLock::
+CapsLock up::
     SetCapsLockState, Off
 return
 
