@@ -18,6 +18,8 @@ considerShift(key) {
             Send ß
         case "e":
             Send €
+        case "`":
+            Send °
         default:
             Send % shift ? Format("{:U}", key) : key
     }
@@ -50,4 +52,4 @@ CapsLock & w::considerShift("w")
 CapsLock & x::considerShift("x")
 CapsLock & y::considerShift("y")
 CapsLock & z::considerShift("z")
-CapsLock & `::Send °
+CapsLock & `::considerShift("`")
