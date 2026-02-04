@@ -26,6 +26,7 @@ considerShift(key) {
 }
 
 ; CapsLock + Key
+CapsLock & Shift::return
 CapsLock & a::considerShift("a")
 CapsLock & b::considerShift("b")
 CapsLock & c::considerShift("c")
