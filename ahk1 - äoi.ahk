@@ -1,6 +1,6 @@
-﻿; Disable solo CapsLock and always force CapsLock off
-CapsLock::
-CapsLock up::
+﻿; Disable wildcard CapsLock and always force CapsLock off
+*CapsLock::
+*CapsLock up::
     SetCapsLockState, Off
 return
 
